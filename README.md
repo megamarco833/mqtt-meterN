@@ -1,5 +1,6 @@
 # mqtt-metern for domoticz
 this is a PHP script that read data from json created by metern (/dev/shm/) and send using mqtt send meterN data to MQTT using Mosquitto in domoticz format.
+
 Thanks to Jean Marc and Gianfranco Di Prinzio
 
 reference for meterN: https://metern.org
