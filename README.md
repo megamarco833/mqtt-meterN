@@ -13,6 +13,8 @@ sudo chmod +x mqtt_energy.php
 2) modify php script according to your: IDXs, names (refer also to example code with only production and consumption)
 
 example modify the idx according to dummy devices create in domoticz:
+
+```
 $ID_prod   = 4;  //idx of  dummy device: electrical instantenous + counter = 4
 $ID_prel   = 5;
 $ID_autoc  = 6;
@@ -21,6 +23,7 @@ $ID_f23    = 8;
 $ID_imm    = 9;
 $ID_cons   = 10;
 $ID_boiler = 130;
+```
 
 and then modify this part according to your needs:
 
