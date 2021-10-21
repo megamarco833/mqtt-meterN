@@ -23,7 +23,8 @@ $ID_cons   = 10;
 $ID_boiler = 130;
 
 and then modify this part according to your needs:
-hile (true) {
+
+```while (true) {
    
     if (file_exists('/dev/shm/mN_LIVEMEMORY.json') && file_exists('/dev/shm/mN_ILIVEMEMORY.json') && file_exists('/dev/shm/mN_MEMORY.json')) {
        
@@ -55,23 +56,23 @@ hile (true) {
       $V   = $memarray_mN_ILIVEM["Voltage1"]; //Voltage1 = Volt
         $A   = $memarray_mN_ILIVEM["Corrente2"]; //Corrente2 = Ampere
         $h2o = $memarray_mN_ILIVEM["ACQUA7"] * 1000; //ACQUA7 = acqua in m3
-
+```
 
 modify the update time: every X seconds to send data from metern to domoticz:
-$frequenza = 10; // seconds for loop
+`$frequenza = 10; // seconds for loop`
 
 
 3) create symlink:
-sudo ln -s /var/www/comapps/mqtt_energy.php /usr/bin/mqtt_energy
+`sudo ln -s /var/www/comapps/mqtt_energy.php /usr/bin/mqtt_energy`
 
 4) create a systemd service to run it
 
 esample of systemd:
 
-sudo nano /etc/systemd/system/mqtt_energy.service
+`sudo nano /etc/systemd/system/mqtt_energy.service`
 
 
-
+```
 [Unit]
 Description=mqtt_energy
 Requires=network.target
@@ -84,8 +85,9 @@ ExecStart=/usr/bin/php /var/www/comapps/mqtt_energy.php
 
 [Install]
 WantedBy=default.target
+```
 
+then activate the systemd
 
-
-sudo systemctl enable mqtt_energy.service
-sudo systemctl start mqtt_energy.service
+`sudo systemctl enable mqtt_energy.service`
+`sudo systemctl start mqtt_energy.service`
