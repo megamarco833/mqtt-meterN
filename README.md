@@ -25,6 +25,22 @@ $ID_cons   = 10;
 $ID_boiler = 130;
 ```
 
+remember that every idx insert here need to have this part accordingly to domoticz device, example for dummy device: electrical instantenous + counter about production meter:
+
+```
+// produzione:
+        $svalue = "$prodW;$prod_KWH";
+        $arr    = array(
+            'idx' => $ID_prod,
+            'nvalue' => 0,
+            'svalue' => $svalue
+        );
+```
+you have to comment if you not use a sensor in the script and if you need to add a new one you have to copy-paste this part for every added sensor and modify it according to your needs
+
+
+
+
 and then modify this part according to your needs:
 
 ```while (true) {
