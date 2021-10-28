@@ -80,6 +80,9 @@ and then modify this part according to your needs:
 modify the update time: every X seconds to send data from metern to domoticz:
 `$frequenza = 10; // seconds for loop`
 
+modify in line17 your mqtt broker IP:
+`$CMD = "timeout --kill-after=15s 10s mosquitto_pub -d -h '192.168.0.105' -t 'domoticz/in' -m '$msg'";`
+
 
 3) create symlink:
 `sudo ln -s /var/www/comapps/mqtt_energy.php /usr/bin/mqtt_energy`
